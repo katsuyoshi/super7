@@ -1,0 +1,20 @@
+!!! XML
+!!!
+%html
+  %head
+    %meta{:content=>"text/html", :charset=>"utf-8"}
+    %title Super 7
+
+  %body
+    %h1 Super 7
+    %div 出目入力
+    %div= @message
+
+    %form{:action => "/", :method => "post" }
+      %input{ :type => "textfield", :name => "deme", :value => @deme }
+      %input{ :type => "submit", :value => "送信" }
+    %div
+    - if @results
+      - @results.each do |deme|
+        = deme
+        %br
